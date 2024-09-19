@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog con Modal y Carousel Dinámico</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/dynamicModals.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Blog de Viajes</h1>
+        <div id="blogPosts" class="row" data-blog-posts='[
+            {
+                "title": "Aventura en los Alpes Suizos",
+                "description": "Un viaje inolvidable a través de los majestuosos Alpes Suizos, explorando glaciares, lagos cristalinos y pueblos pintorescos.",
+                "image": "https://picsum.photos/id/1018/400/300",
+                "photos": [
+                    { "src": "https://picsum.photos/id/1018/800/600", "alt": "Vista panorámica de los Alpes Suizos" },
+                    { "src": "https://picsum.photos/id/1019/800/600", "alt": "Lago alpino rodeado de montañas nevadas" },
+                    { "src": "https://picsum.photos/id/1020/800/600", "alt": "Teleférico ascendiendo a la cima de la montaña" },
+                    { "src": "https://picsum.photos/id/1021/800/600", "alt": "Pueblo tradicional suizo en el valle" }
+                ]
+            },
+            {
+                "title": "Explorando la selva amazónica",
+                "description": "Una expedición a lo profundo de la selva amazónica, descubriendo su rica biodiversidad y conviviendo con comunidades indígenas.",
+                "image": "https://picsum.photos/id/1043/400/300",
+                "photos": [
+                    { "src": "https://picsum.photos/id/1043/800/600", "alt": "Denso dosel de la selva amazónica" },
+                    { "src": "https://picsum.photos/id/1044/800/600", "alt": "Río serpenteante a través de la jungla" },
+                    { "src": "https://picsum.photos/id/1045/800/600", "alt": "Colorida rana venenosa en una hoja" },
+                    { "src": "https://picsum.photos/id/1047/800/600", "alt": "Aldea indígena a orillas del río" },
+                    { "src": "https://picsum.photos/id/1050/800/600", "alt": "Majestuoso jaguar en su hábitat natural" }
+                ]
+            },
+            {
+                "title": "Descubriendo Tokio",
+                "description": "Un viaje fascinante por la metrópolis más grande del mundo, explorando la perfecta fusión entre tradición y modernidad.",
+                "image": "https://picsum.photos/id/1070/400/300",
+                "photos": [
+                    { "src": "https://picsum.photos/id/1070/800/600", "alt": "Vista nocturna de los rascacielos de Tokio" },
+                    { "src": "https://picsum.photos/id/1071/800/600", "alt": "Templo Senso-ji en Asakusa" },
+                    { "src": "https://picsum.photos/id/1072/800/600", "alt": "Cruce de Shibuya en hora punta" },
+                    { "src": "https://picsum.photos/id/1073/800/600", "alt": "Jardín tradicional japonés en el Palacio Imperial" },
+                    { "src": "https://picsum.photos/id/1074/800/600", "alt": "Mercado de pescado de Tsukiji" }
+                ]
+            }
+        ]'></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photoModalLabel">Fotos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="photoCarousel" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <!-- Los indicadores se generarán dinámicamente aquí -->
+                        </div>
+                        <div class="carousel-inner">
+                            <!-- Las imágenes del carousel se generarán dinámicamente aquí -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer" id="photoDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dynamicModals.js"></script>
+</body>
+
+</html>
